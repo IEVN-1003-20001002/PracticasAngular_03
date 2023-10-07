@@ -1,32 +1,55 @@
-<div class="row">
-    <div class="col-6">
-        <div class="mb-3 row">
-            <label for="num1" class="col-sm-2 col-form-label">Nombre:</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" name="num1" >
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-6">
+                <h3 class="tituloDivs">Entrada</h3>
+                <div class="Div">
+                    <div class="labelsEntradas col-6">
+                        <label class="labelEntrada">Nombre:</label>
+                        <label class="labelEntrada">Cantidad compradores:</label>
+                        <label class="labelEntrada">Tarjeta Cinepolis:</label>
+                        <label class="labelEntrada">Cantidad de boletos:</label>
+                    </div>
+                    <div class="inputsEntradas col-6" id="holo">
+                        <input [(ngModel)]="nombre" type="text" class="form-control inputEntrada">
+                        <input [(ngModel)]="compradores" type="number" class="form-control inputEntrada">
+                        <mat-radio-group [(ngModel)]="opciones">
+                            <mat-radio-button value="1">Si</mat-radio-button>
+                            <mat-radio-button value="0">No</mat-radio-button>
+                        </mat-radio-group>
+                        <input [(ngModel)]="numBoletos" type="number" class="form-control inputEntrada">
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="mb-3 row">
-            <label for="num2" class="col-sm-2 col-form-label">Cantidad de compradores:</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" name="num2">
+            <div class="col-6">
+                <h3 class="tituloDivs">Salida</h3>
+                <div class="Div">
+                    <div class="labelsEntradas col-6">
+                        <label class="labelEntrada">Valor a pagar:</label>
+                    </div>
+                    <div class="inputsEntradas col-6">
+                        <input [(ngModel)]="totalPagar" type="text" class="form-control inputEntrada">
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="mb-3 row">
-            <h3>Tarjeta Cinepolis</h3>
-            <input type="radio" id="si" name="tarjetaCinepolis" value="HTML">
-                <label for="si">Si</label><br>
-            <input type="radio" id="no" name="tarjetaCinepolis" value="CSS">
-                <label for="no">No</label><br>
-       <!-- <mat-radio-group aria-label="Select an option">
-            <mat-radio-button value="1">Option 1</mat-radio-button>
-            <mat-radio-button value="2">Option 2</mat-radio-button>
-          </mat-radio-group>
-        </div>-->
-        <div class="mb-3 row">
-            <button class="btn btn-primary">Calcular Multiplicación</button>
+            <div class="col-12 divInferior">
+                <div class="col-6">
+                    <h3 class="tituloDivs">Acciones</h3>
+                    <div class="Div">
+                        <div class="btnAcciones">
+                            <button (click)="procesarCompra()" mat-raised-button>Procesar</button>
+                            <button (click)="recargar()" mat-raised-button >Salir</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="col-6"></div>
-    <h2></h2>
-</div>
+</body>
+</html>
